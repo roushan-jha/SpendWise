@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const GlobalContext = createContext(null);
 
@@ -23,7 +23,17 @@ export default function GlobalState({children}) {
           { ...currentFormData, id: Date.now() },
         ]);
       }
-      console.log(allTransactions)
+
+      // console.log(allTransactions)
+      useEffect(() => {
+        const allTransactions = JSON.parse(localStorage.getItem("allTransactions"))   
+        if (allTransactions && allTransactions.length > 0) {
+          setAllTransactions(allTransactions);
+        }
+      }, [])
+      useEffect(() => {
+        localStorage.setItem("allTransactions", JSON.stringify(allTransactions))
+      }, [allTransactions])
 
     return <GlobalContext.Provider
     value={{

@@ -1,5 +1,5 @@
 import { Button, Flex, Heading, useDisclosure } from '@chakra-ui/react'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import OverView from './OverView'
 import ExpenseView from './ExpenseView'
 import { GlobalContext } from '../contexts'
@@ -28,7 +28,10 @@ const Main = () => {
         setTotalIncome(income);
       }, [allTransactions]);
 
-    
+      const deleteData = () => {
+        localStorage.clear();
+      }
+
     return (
         <Flex
             textAlign={"center"}
@@ -48,6 +51,7 @@ const Main = () => {
                      onClick={onOpen}>
                         Add New Transaction
                     </Button>
+                    <Button bg={'blue.300'} ml={'2'} mr={'2'} onClick={deleteData}>❌</Button>
                 </Flex>
             </Flex>
 

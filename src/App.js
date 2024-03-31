@@ -1,5 +1,6 @@
 import { Box, Container, Flex } from '@chakra-ui/react';
 import Main from './components/Main';
+// import { useEffect } from 'react';
 
 function App() {
   return (
