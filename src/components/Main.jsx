@@ -6,6 +6,7 @@ import { GlobalContext } from '../contexts'
 
 const Main = () => {
     const {isOpen, onOpen, onClose} = useDisclosure();
+    const [isAvailable, setIsAvailable] = useState(false);
     const {
         totalExpense,
         allTransactions,
@@ -26,9 +27,17 @@ const Main = () => {
     
         setTotalExpense(expense);
         setTotalIncome(income);
+        setIsAvailable(true);
       }, [allTransactions]);
 
       const deleteData = () => {
+        allTransactions.forEach((item) => {
+            item.amount = 0; 
+            item.description = "";
+        })
+        setTotalExpense(0);
+        setTotalIncome(0);
+        setIsAvailable(false);
         localStorage.clear();
       }
 
@@ -61,8 +70,8 @@ const Main = () => {
                 alignItems={'flex-start'}
                 justifyContent={'space-evenly'}
                 flexDirection={['column', 'column', 'column', 'row', 'row']} >
-                <ExpenseView data={allTransactions.filter(item => item.type === 'income')} type={'income'} />
-                <ExpenseView data={allTransactions.filter(item => item.type === 'expense')} type={'expense'} />
+                <ExpenseView isAvailable={isAvailable} data={allTransactions.filter(item => item.type === 'income')} type={'income'} />
+                <ExpenseView isAvailable={isAvailable} data={allTransactions.filter(item => item.type === 'expense')} type={'expense'} />
             </Flex>
         </Flex>
     )
