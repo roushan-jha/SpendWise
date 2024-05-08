@@ -10,6 +10,7 @@ const Main = () => {
     const {
         totalExpense,
         allTransactions,
+        setAllTransactions,
         setTotalExpense,
         totalIncome,
         setTotalIncome,
@@ -31,12 +32,7 @@ const Main = () => {
       }, [allTransactions]);
 
       const deleteData = () => {
-        allTransactions.forEach((item) => {
-            item.amount = 0; 
-            item.description = "";
-        })
-        setTotalExpense(0);
-        setTotalIncome(0);
+        setAllTransactions([]);
         setIsAvailable(false);
         localStorage.clear();
       }
