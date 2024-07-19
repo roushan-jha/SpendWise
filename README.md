@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# SpendWise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An Expense Tracker application.
 
-## Available Scripts
+# Demo
+#### [Click here to preview...](https://spend-wise-expensetracker.vercel.app/)
 
-In the project directory, you can run:
+![Screenshot 2024-07-19 235301](https://github.com/user-attachments/assets/8602f5ad-d37a-4d2d-a3d1-cc1be7f54cb7)
 
-### `npm start`
+## Features
+### 1) Input for Income/Expense:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Users can input their income and expenses through an intuitive interface.
+- Categories for income and expenses are available for better organization.
+### 2) Visual Representation through Pie Chart:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Utilizes React-ApexCharts to display income and expense data visually.
+- Pie charts provide a clear and interactive visual representation of income vs. expenses and different expense categories.
+### 3) Expense History Management:
 
-### `npm test`
+- Maintains a history of all income and expense entries.
+- Uses localStorage to persist data across sessions, ensuring users don't lose their data even after refreshing the page.
+### 4) Balance Calculation:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Displays the current balance calculated as the difference between total income and total expenses.
+- Real-time updates to the balance as new entries are added.
+### 5) User-Friendly Interface:
 
-### `npm run build`
+- A clean and straightforward UI with distinct sections for income, expenses, and overall financial summary.
+- Easy navigation and interaction for adding new transactions and viewing the financial summary.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Learnings
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1) React Hooks:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Utilized useState for managing the state of income, expenses, and balance.
+- Implemented useEffect for handling side effects, such as updating the balance whenever income or expenses change.
+### 2) Context API:
 
-### `npm run eject`
+- Leveraged Context API for global state management, providing a seamless way to share state across components without prop drilling.
+- Created and managed context for income, expenses, and historical data.
+### 3) Data Visualization with React-ApexCharts:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Integrated React-ApexCharts to dynamically generate pie charts based on the input data.
+- Gained insights into manipulating chart data and updating charts in real-time.
+### 4) Local Storage:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Implemented localStorage for persistent storage of income and expense data.
+- Ensured data is saved and retrieved correctly, providing a consistent user experience across sessions.
