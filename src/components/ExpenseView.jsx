@@ -39,7 +39,7 @@ const ExpenseView = ({type, data, isAvailable}) => {
                   {item.description}
                 </Text>
               </Flex>
-              <Text>$ {item.amount}</Text>
+              <Text>₹ {item.amount}</Text>
             </Flex>
           </>
         ))) : <h1>Not Available</h1>
